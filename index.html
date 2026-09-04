@@ -11,6 +11,80 @@
 @media(max-width:520px){.grid{grid-template-columns:1fr}.hero{padding:45px 5%}.nav{padding:9px 4%}.brand img{height:46px}}
 </style></head>
 <body>
+  <script>
+const products = [
+  {name:'Étagère à chaussures',cat:'Maison',price:10000,image:'etagere-chaussures.jpg'},
+  {name:'Montre téléphone GSM',cat:'Accessoires',price:15000,image:'montre-telephone.jpg'},
+  {name:'Smartphone',cat:'Autres',price:160000,image:'smartphone.jpg'},
+  {name:'Bouilloire électrique',cat:'Maison',price:8000,image:'bouilloire.jpg'},
+  {name:'Serviettes de bain',cat:'Maison',price:7000,image:'serviettes.jpg'},
+  {name:'Ensemble homme',cat:'Mode',price:7000,image:'ensemble-homme.jpg'},
+  {name:'Robe femme',cat:'Mode',price:7000,image:'robe-femme.jpg'},
+  {name:'Coffret de parfums',cat:'Accessoires',price:7000,image:'coffret-parfums.jpg'},
+  {name:'Sac à dos multifonction',cat:'Accessoires',price:8000,image:'sac-a-dos.jpg'},
+  {name:'Sac femme',cat:'Accessoires',price:6500,image:'sac-femme.jpg'},
+
+  {name:'Coffret parfums Angel Elves Homme',cat:'Accessoires',price:7000,image:'coffret-parfums-angel-elves-homme.jpg'},
+  {name:'Coffret parfums Angel Elves Femme',cat:'Accessoires',price:7000,image:'coffret-parfums-angel-elves-femme.jpg'},
+  {name:'Coffret parfums Angel Elves Mixte',cat:'Accessoires',price:7000,image:'coffret-parfums-angel-elves-mixte.jpg'},
+
+  {name:'Crampons football Blanc & Vert',cat:'Chaussures',price:13000,image:'crampons-football-blanc-vert.jpg'},
+  {name:'Crampons football Blanc & Bleu',cat:'Chaussures',price:13000,image:'crampons-football-blanc-bleu.jpg'},
+  {name:'Crampons football Orange',cat:'Chaussures',price:13000,image:'crampons-football-orange.jpg'},
+
+  {name:'Ensemble homme Marron',cat:'Mode',price:7000,image:'ensemble-homme-marron.jpg'},
+  {name:'Ensemble homme Rouge',cat:'Mode',price:7500,image:'ensemble-homme-rouge.jpg'},
+  {name:'Ensemble homme Rose',cat:'Mode',price:7500,image:'ensemble-homme-rose.jpg'},
+  {name:'Ensemble homme 1997 Noir',cat:'Mode',price:7000,image:'ensemble-homme-1997-noir.jpg'},
+
+  {name:'Ensemble montre & bracelets doré',cat:'Accessoires',price:5000,image:'montre-set-dore.jpg'},
+  {name:'Ensemble montre & bracelets bleu',cat:'Accessoires',price:4000,image:'montre-set-bleu.jpg'},
+  {name:'Montre Geneva chronographe acier',cat:'Accessoires',price:3500,image:'montre-geneva-chronographe.jpg'},
+  {name:'Montre noire avec bracelets',cat:'Accessoires',price:4000,image:'montre-noire-bracelets.jpg'},
+  {name:'Montre Geneva classique noire',cat:'Accessoires',price:4000,image:'montre-geneva-noire.jpg'},
+  {name:'Montre WOKAI bleue',cat:'Accessoires',price:3500,image:'montre-wokai-bleue.jpg'},
+  {name:'Montre BINDONG dorée',cat:'Accessoires',price:8000,image:'montre-bindong-doree.jpg'},
+  {name:'Montre carrée bleue',cat:'Accessoires',price:3500,image:'montre-carree-bleue.jpg'},
+  {name:'Montre BOLUN blanche et bleue',cat:'Accessoires',price:3500,image:'montre-bolun-bleue.jpg'},
+  {name:'Montre COGONG rouge',cat:'Accessoires',price:4000,image:'montre-cogong-rouge.jpg'},
+
+  {name:'Sac cabas motif africain',cat:'Accessoires',price:6500,image:'sac-cabas-africain.jpg'},
+  {name:'Sac cabas noir motif fille',cat:'Accessoires',price:6500,image:'sac-cabas-noir-fille.jpg'},
+  {name:'Sac cabas rose femme',cat:'Accessoires',price:6500,image:'sac-cabas-rose-femme.jpg'},
+  {name:'Sac cabas rose anime',cat:'Accessoires',price:6500,image:'sac-cabas-rose-anime.jpg'},
+  {name:'Sac cabas beige femme',cat:'Accessoires',price:6500,image:'sac-cabas-beige-femme.jpg'},
+
+  {name:'Ensemble montre & bracelets noir',cat:'Accessoires',price:5000,image:'montre-set-noir-1.jpg'},
+  {name:'Ensemble montre homme noir',cat:'Accessoires',price:5000,image:'montre-set-noir-2.jpg'},
+  {name:'Montre ZHPEER dorée',cat:'Accessoires',price:5000,image:'montre-zhpeer-doree.jpg'},
+  {name:'Ensemble montre & bracelets noir carré',cat:'Accessoires',price:5000,image:'montre-set-noir-3.jpg'},
+  {name:'Montre classique dorée bracelet cuir',cat:'Accessoires',price:5000,image:'montre-doree-cuir.jpg'},
+  {name:'Ensemble montre & bracelets noir élégant',cat:'Accessoires',price:5000,image:'montre-set-noir-4.jpg'},
+  {name:'Ensemble montre & bracelets marron',cat:'Accessoires',price:4500,image:'montre-set-marron.jpg'},
+  {name:'Montre Geneva noire avec bracelets',cat:'Accessoires',price:4500,image:'montre-geneva-bracelets-noire.jpg'},
+  {name:'Ensemble montre bracelet cuir marron',cat:'Accessoires',price:4500,image:'montre-set-cuir-marron.jpg'},
+  {name:'Ensemble montre & accessoires blanc',cat:'Accessoires',price:5000,image:'montre-set-blanc.jpg'},
+  {name:'Montre homme + bracelets',cat:'Accessoires',price:5000,image:'montre-homme-bracelets-noir-1.jpg'},
+  {name:'Montre luxe dorée + bracelet',cat:'Accessoires',price:5000,image:'montre-luxe-doree-bracelet.jpg'},
+  {name:'Montre Gusalaï bleue',cat:'Accessoires',price:4000,image:'montre-gusalai-bleue.jpg'},
+  {name:'Montre homme + bracelets noirs',cat:'Accessoires',price:5000,image:'montre-bracelets-noir-2.jpg'},
+  {name:'Montre cuir + bracelets',cat:'Accessoires',price:4500,image:'montre-cuir-brun-bracelets.jpg'},
+  {name:'Montre classique cuir marron',cat:'Accessoires',price:4500,image:'montre-cuir-classique.jpg'},
+  {name:'Montre BOLUN noire',cat:'Accessoires',price:3500,image:'montre-bolun-noire.jpg'},
+  {name:'Montre BOLUN marron',cat:'Accessoires',price:3500,image:'montre-bolun-brune.jpg'},
+  {name:'Montre BOLUN bleue – modèle 2',cat:'Accessoires',price:3500,image:'montre-bolun-bleue-2.jpg'},
+  {name:'Montre BOLUN bleue – modèle 3',cat:'Accessoires',price:3500,image:'montre-bolun-bleue-3.jpg'},
+  {name:'Montre BOLUN dorée cuir',cat:'Accessoires',price:3500,image:'montre-bolun-doree-cuir.jpg'},
+  {name:'Montre bleue cuir marron',cat:'Accessoires',price:3500,image:'montre-bleue-cuir-marron.jpg'},
+
+  {name:'Ensemble sac à dos gris',cat:'Accessoires',price:8000,image:'sac-set-gris.jpg'},
+  {name:'Ensemble sac bleu ciel',cat:'Accessoires',price:8000,image:'sac-set-bleu-ciel.jpg'},
+  {name:'Ensemble sac 3 en 1 noir',cat:'Accessoires',price:8000,image:'sac-set-3-en-1.jpg'},
+  {name:'Ensemble sac noir',cat:'Accessoires',price:8000,image:'sac-set-noir.jpg'},
+  {name:'Ensemble sac blanc et noir',cat:'Accessoires',price:8000,image:'sac-set-blanc-noir.jpg'},
+  {name:'Ensemble sac à dos noir 5 pièces',cat:'Accessoires',price:8000,image:'sac-set-5-pieces.jpg'}
+];
+  </script>
 <div class="top">🇸🇳 Livraison au Sénégal • Commande simple par WhatsApp • Paiement à convenir</div>
 <nav class="nav"><a class="brand" href="#accueil"><img src="logo.jpg" alt="SAME-SHOP"></a><div class="links"><a href="#boutique">Boutique</a><a href="#pourquoi">Pourquoi nous</a><a href="#contact">Contact</a></div><button class="cart" onclick="openCart()">🛒 Panier (<span id="count">0</span>)</button></nav>
 <section class="hero" id="accueil"><div><p style="font-weight:800;color:var(--brown)">BIENVENUE CHEZ SAME-SHOP 🛍️</p><h1>Tout ce qu’il vous faut, <span>au même endroit.</span></h1><p>Découvrez une sélection de produits pour hommes, femmes, maison et quotidien. Choisissez vos articles et envoyez votre commande directement sur WhatsApp.</p><a class="btn" href="#boutique">Découvrir la boutique →</a></div><div class="hero-card"><img src="logo.jpg" alt="Logo SAME-SHOP"></div></section>
@@ -18,72 +92,7 @@
 <section class="why" id="pourquoi"><div class="section"><h2>Pourquoi SAME-SHOP ?</h2><div class="features"><div class="feature"><h3>🇸🇳 Pensé pour le Sénégal</h3><p>Une boutique en ligne simple et adaptée aux commandes locales.</p></div><div class="feature"><h3>💬 Commande WhatsApp</h3><p>Pas besoin de créer un compte : votre panier est envoyé directement à notre WhatsApp.</p></div><div class="feature"><h3>🛍️ Plusieurs catégories</h3><p>Mode, chaussures, accessoires, maison et beaucoup d’autres produits.</p></div></div></div></section>
 <section class="section" id="contact"><h2>Contactez-nous</h2><div class="contact"><div class="box"><h3>📱 WhatsApp</h3><p>Une question ou une commande ? Écrivez-nous directement.</p><a class="wa" href="https://wa.me/221709498124?text=Bonjour%20SAME-SHOP%20%F0%9F%9B%8D%EF%B8%8F%2C%20je%20souhaite%20passer%20une%20commande." target="_blank">💬 Ouvrir WhatsApp</a></div><div class="box"><h3>📍 Sénégal</h3><p>Livraison disponible au Sénégal. Les frais et modalités de livraison sont confirmés lors de la commande.</p></div></div></section>
 <footer class="footer">© <span id="year"></span> SAME-SHOP 🛍️ — Votre boutique en ligne au Sénégal</footer>
-<div class="modal" id="modal" onclick="if(event.target===this)closeCart()"><div class="sheet"><button class="close" onclick="closeCart()">✕</button><h2>Votre panier 🛒</h2><div id="cart"></div><button class="checkout" onclick="checkout()">Commander sur WhatsApp</button></div></div>
-<script>
-const products=[
-{name:'Étagère à chaussures',cat:'Maison',price:10000,image:'products/etagere-chaussures.jpg'},
-{name:'Montre téléphone GSM',cat:'Accessoires',price:15000,image:'products/montre-telephone.jpg'},
-{name:'Smartphone',cat:'Autres',price:160000,image:'products/smartphone.jpg'},
-{name:'Bouilloire électrique',cat:'Maison',price:8000,image:'products/bouilloire.jpg'},
-{name:'Serviettes de bain',cat:'Maison',price:7000,image:'products/serviettes.jpg'},
-{name:'Ensemble homme',cat:'Mode',price:7000,image:'products/ensemble-homme.jpg'},
-{name:'Robe femme',cat:'Mode',price:7000,image:'products/robe-femme.jpg'},
-{name:'Coffret de parfums',cat:'Accessoires',price:7000,image:'products/coffret-parfums.jpg'},
-{name:'Sac à dos multifonction',cat:'Accessoires',price:8000,image:'products/sac-a-dos.jpg'},
-{name:'Sac femme',cat:'Accessoires',price:6500,image:'products/sac-femme.jpg'},
-{name:'Coffret parfums Angel Elves Homme',cat:'Accessoires',price:7000,image:'products/coffret-parfums-angel-elves-homme.jpg'},
-{name:'Coffret parfums Angel Elves Femme',cat:'Accessoires',price:7000,image:'products/coffret-parfums-angel-elves-femme.jpg'},
-{name:'Coffret parfums Angel Elves Mixte',cat:'Accessoires',price:7000,image:'products/coffret-parfums-angel-elves-mixte.jpg'},
-{name:'Crampons football Blanc & Vert',cat:'Chaussures',price:13000,image:'products/crampons-football-blanc-vert.jpg'},
-{name:'Crampons football Blanc & Bleu',cat:'Chaussures',price:13000,image:'products/crampons-football-blanc-bleu.jpg'},
-{name:'Crampons football Orange',cat:'Chaussures',price:13000,image:'products/crampons-football-orange.jpg'},
-{name:'Ensemble homme Marron',cat:'Mode',price:7000,image:'products/ensemble-homme-marron.jpg'},
-{name:'Ensemble homme Rouge',cat:'Mode',price:7500,image:'products/ensemble-homme-rouge.jpg'},
-{name:'Ensemble homme Rose',cat:'Mode',price:7500,image:'products/ensemble-homme-rose.jpg'},
-{name:'Ensemble homme 1997 Noir',cat:'Mode',price:7000,image:'products/ensemble-homme-1997-noir.jpg'},
-{name:'Ensemble montre & bracelets doré',cat:'Accessoires',price:5000,image:'products/montre-set-dore.jpg'},
-{name:'Ensemble montre & bracelets bleu',cat:'Accessoires',price:4000,image:'products/montre-set-bleu.jpg'},
-{name:'Montre Geneva chronographe acier',cat:'Accessoires',price:3500,image:'products/montre-geneva-chronographe.jpg'},
-{name:'Montre noire avec bracelets',cat:'Accessoires',price:4000,image:'products/montre-noire-bracelets.jpg'},
-{name:'Montre Geneva classique noire',cat:'Accessoires',price:4000,image:'products/montre-geneva-noire.jpg'},
-{name:'Montre WOKAI bleue',cat:'Accessoires',price:3500,image:'products/montre-wokai-bleue.jpg'},
-{name:'Montre BINDONG dorée',cat:'Accessoires',price:8000,image:'products/montre-bindong-doree.jpg'},
-{name:'Montre carrée bleue',cat:'Accessoires',price:3500,image:'products/montre-carree-bleue.jpg'},
-{name:'Montre BOLUN blanche et bleue',cat:'Accessoires',price:3500,image:'products/montre-bolun-bleue.jpg'},
-{name:'Montre COGONG rouge',cat:'Accessoires',price:4000,image:'products/montre-cogong-rouge.jpg'},
-{name:'Sac cabas motif africain',cat:'Accessoires',price:6500,image:'products/sac-cabas-africain.jpg'},
-{name:'Sac cabas noir motif fille',cat:'Accessoires',price:6500,image:'products/sac-cabas-noir-fille.jpg'},
-{name:'Sac cabas rose femme',cat:'Accessoires',price:6500,image:'products/sac-cabas-rose-femme.jpg'},
-{name:'Sac cabas rose anime',cat:'Accessoires',price:6500,image:'products/sac-cabas-rose-anime.jpg'},
-{name:'Sac cabas beige femme',cat:'Accessoires',price:6500,image:'products/sac-cabas-beige-femme.jpg'},
-{name:'Ensemble montre & bracelets noir',cat:'Accessoires',price:5000,image:'products/montre-set-noir-1.jpg'},
-{name:'Ensemble montre homme noir',cat:'Accessoires',price:5000,image:'products/montre-set-noir-2.jpg'},
-{name:'Montre ZHPEER dorée',cat:'Accessoires',price:5000,image:'products/montre-zhpeer-doree.jpg'},
-{name:'Ensemble montre & bracelets noir carré',cat:'Accessoires',price:5000,image:'products/montre-set-noir-3.jpg'},
-{name:'Montre classique dorée bracelet cuir',cat:'Accessoires',price:5000,image:'products/montre-doree-cuir.jpg'},
-{name:'Ensemble montre & bracelets noir élégant',cat:'Accessoires',price:5000,image:'products/montre-set-noir-4.jpg'},
-{name:'Ensemble montre & bracelets marron',cat:'Accessoires',price:4500,image:'products/montre-set-marron.jpg'},
-{name:'Montre Geneva noire avec bracelets',cat:'Accessoires',price:4500,image:'products/montre-geneva-bracelets-noire.jpg'},
-{name:'Ensemble montre bracelet cuir marron',cat:'Accessoires',price:4500,image:'products/montre-set-cuir-marron.jpg'},
-{name:'Ensemble montre & accessoires blanc',cat:'Accessoires',price:5000,image:'products/montre-set-blanc.jpg'},
-{name:'Montre homme + bracelets',cat:'Accessoires',price:5000,image:'products/montre-homme-bracelets-noir-1.jpg'},
-{name:'Montre luxe dorée + bracelet',cat:'Accessoires',price:5000,image:'products/montre-luxe-doree-bracelet.jpg'},
-{name:'Montre Gusalaï bleue',cat:'Accessoires',price:4000,image:'products/montre-gusalai-bleue.jpg'},
-{name:'Montre homme + bracelets noirs',cat:'Accessoires',price:5000,image:'products/montre-bracelets-noir-2.jpg'},
-{name:'Montre cuir + bracelets',cat:'Accessoires',price:4500,image:'products/montre-cuir-brun-bracelets.jpg'},
-{name:'Montre classique cuir marron',cat:'Accessoires',price:4500,image:'products/montre-cuir-classique.jpg'},
-{name:'Montre BOLUN noire',cat:'Accessoires',price:3500,image:'products/montre-bolun-noire.jpg'},
-{name:'Montre BOLUN marron',cat:'Accessoires',price:3500,image:'products/montre-bolun-brune.jpg'},
-{name:'Montre BOLUN bleue – modèle 2',cat:'Accessoires',price:3500,image:'products/montre-bolun-bleue-2.jpg'},
-{name:'Montre BOLUN bleue – modèle 3',cat:'Accessoires',price:3500,image:'products/montre-bolun-bleue-3.jpg'},
-{name:'Montre BOLUN dorée cuir',cat:'Accessoires',price:3500,image:'products/montre-bolun-doree-cuir.jpg'},
-{name:'Montre bleue cuir marron',cat:'Accessoires',price:3500,image:'products/montre-bleue-cuir-marron.jpg'},
-{name:'Ensemble sac à dos gris',cat:'Accessoires',price:8000,image:'products/sac-set-gris.jpg'},
-{name:'Ensemble sac bleu ciel',cat:'Accessoires',price:8000,image:'products/sac-set-bleu-ciel.jpg'},
-{name:'Ensemble sac 3 en 1 noir',cat:'Accessoires',price:8000,image:'products/sac-set-3-en-1.jpg'},
-{name:'Ensemble sac noir',cat:'Accessoires',price:8000,image:'products/sac-set-noir.jpg'},
-{name:'Ensemble sac blanc et noir',cat:'Accessoires',price:8000,image:'products/sac-set-blanc-noir.jpg'},
-{name:'Ensemble sac à dos noir 5 pièces',cat:'Accessoires',price:8000,image:'products/sac-set-5-pieces.jpg'}];
+<div class="modal" id="modal" onclick="if(event.target===this)closeCart()"><div class="sheet"><button class="close" onclick="closeCart()">✕</button><h2>Votre panier 🛒</h2><div id="cart"></div><button class="checkout" onclick="checkout()">Commander sur WhatsApp</button></div></div}];
 let category='Tous',cart=[];
 function money(n){return n==null?'Prix à confirmer':new Intl.NumberFormat('fr-FR').format(n)+' FCFA'}
 function setCat(c,el){category=c;document.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));el.classList.add('active');render()}
