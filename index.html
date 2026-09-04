@@ -31,16 +31,16 @@ const products=[
 {name:'Coffret de parfums',cat:'Accessoires',price:7000,image:'products/coffret-parfums.jpg'},
 {name:'Sac à dos multifonction',cat:'Accessoires',price:8000,image:'products/sac-a-dos.jpg'},
 {name:'Sac femme',cat:'Accessoires',price:6500,image:'products/sac-femme.jpg'},
-{name:'Coffret parfums Angel Elves Homme',cat:'Accessoires',price:7000,image:'products/new-1.jpg'},
-{name:'Coffret parfums Angel Elves Femme',cat:'Accessoires',price:7000,image:'products/new-2.jpg'},
-{name:'Coffret parfums Angel Elves Mixte',cat:'Accessoires',price:7000,image:'products/new-3.jpg'},
-{name:'Crampons football Blanc & Vert',cat:'Chaussures',price:13000,image:'products/new-4.jpg'},
-{name:'Crampons football Blanc & Bleu',cat:'Chaussures',price:13000,image:'products/new-5.jpg'},
-{name:'Crampons football Orange',cat:'Chaussures',price:13000,image:'products/new-6.jpg'},
-{name:'Ensemble homme Marron',cat:'Mode',price:7000,image:'products/new-7.jpg'},
-{name:'Ensemble homme Rouge',cat:'Mode',price:7500,image:'products/new-8.jpg'},
-{name:'Ensemble homme Rose',cat:'Mode',price:7500,image:'products/new-9.jpg'},
-{name:'Ensemble homme 1997 Noir',cat:'Mode',price:7500,image:'products/new-10.jpg'},
+{name:'Coffret parfums Angel Elves Homme',cat:'Accessoires',price:7000,image:'products/coffret-parfums-angel-elves-homme.jpg'},
+{name:'Coffret parfums Angel Elves Femme',cat:'Accessoires',price:7000,image:'products/coffret-parfums-angel-elves-femme.jpg'},
+{name:'Coffret parfums Angel Elves Mixte',cat:'Accessoires',price:7000,image:'products/coffret-parfums-angel-elves-mixte.jpg'},
+{name:'Crampons football Blanc & Vert',cat:'Chaussures',price:13000,image:'products/crampons-football-blanc-vert.jpg'},
+{name:'Crampons football Blanc & Bleu',cat:'Chaussures',price:13000,image:'products/crampons-football-blanc-bleu.jpg'},
+{name:'Crampons football Orange',cat:'Chaussures',price:13000,image:'products/crampons-football-orange.jpg'},
+{name:'Ensemble homme Marron',cat:'Mode',price:7000,image:'products/ensemble-homme-marron.jpg'},
+{name:'Ensemble homme Rouge',cat:'Mode',price:7500,image:'products/ensemble-homme-rouge.jpg'},
+{name:'Ensemble homme Rose',cat:'Mode',price:7500,image:'products/ensemble-homme-rose.jpg'},
+{name:'Ensemble homme 1997 Noir',cat:'Mode',price:7000,image:'products/ensemble-homme-1997-noir.jpg'},
 {name:'Ensemble montre & bracelets doré',cat:'Accessoires',price:5000,image:'products/montre-set-dore.jpg'},
 {name:'Ensemble montre & bracelets bleu',cat:'Accessoires',price:4000,image:'products/montre-set-bleu.jpg'},
 {name:'Montre Geneva chronographe acier',cat:'Accessoires',price:3500,image:'products/montre-geneva-chronographe.jpg'},
@@ -65,8 +65,8 @@ const products=[
 {name:'Ensemble montre & bracelets marron',cat:'Accessoires',price:4500,image:'products/montre-set-marron.jpg'},
 {name:'Montre Geneva noire avec bracelets',cat:'Accessoires',price:4500,image:'products/montre-geneva-bracelets-noire.jpg'},
 {name:'Ensemble montre bracelet cuir marron',cat:'Accessoires',price:4500,image:'products/montre-set-cuir-marron.jpg'},
-{name:'Ensemble montre & accessoires blanc',cat:'Accessoires',price:5000,image:'products/montre-set-blanc.jpg'}];
-let category='Tous',cart=[{name:'Montre homme + bracelets',cat:'Accessoires',price:5000,image:'products/montre-homme-bracelets-noir-1.jpg'},
+{name:'Ensemble montre & accessoires blanc',cat:'Accessoires',price:5000,image:'products/montre-set-blanc.jpg'},
+{name:'Montre homme + bracelets',cat:'Accessoires',price:5000,image:'products/montre-homme-bracelets-noir-1.jpg'},
 {name:'Montre luxe dorée + bracelet',cat:'Accessoires',price:5000,image:'products/montre-luxe-doree-bracelet.jpg'},
 {name:'Montre Gusalaï bleue',cat:'Accessoires',price:4000,image:'products/montre-gusalai-bleue.jpg'},
 {name:'Montre homme + bracelets noirs',cat:'Accessoires',price:5000,image:'products/montre-bracelets-noir-2.jpg'},
@@ -78,7 +78,13 @@ let category='Tous',cart=[{name:'Montre homme + bracelets',cat:'Accessoires',pri
 {name:'Montre BOLUN bleue – modèle 3',cat:'Accessoires',price:3500,image:'products/montre-bolun-bleue-3.jpg'},
 {name:'Montre BOLUN dorée cuir',cat:'Accessoires',price:3500,image:'products/montre-bolun-doree-cuir.jpg'},
 {name:'Montre bleue cuir marron',cat:'Accessoires',price:3500,image:'products/montre-bleue-cuir-marron.jpg'},
-];
+{name:'Ensemble sac à dos gris',cat:'Accessoires',price:8000,image:'products/sac-set-gris.jpg'},
+{name:'Ensemble sac bleu ciel',cat:'Accessoires',price:8000,image:'products/sac-set-bleu-ciel.jpg'},
+{name:'Ensemble sac 3 en 1 noir',cat:'Accessoires',price:8000,image:'products/sac-set-3-en-1.jpg'},
+{name:'Ensemble sac noir',cat:'Accessoires',price:8000,image:'products/sac-set-noir.jpg'},
+{name:'Ensemble sac blanc et noir',cat:'Accessoires',price:8000,image:'products/sac-set-blanc-noir.jpg'},
+{name:'Ensemble sac à dos noir 5 pièces',cat:'Accessoires',price:8000,image:'products/sac-set-5-pieces.jpg'}];
+let category='Tous',cart=[];
 function money(n){return n==null?'Prix à confirmer':new Intl.NumberFormat('fr-FR').format(n)+' FCFA'}
 function setCat(c,el){category=c;document.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));el.classList.add('active');render()}
 function render(){let q=document.getElementById('search').value.toLowerCase(),s=document.getElementById('sort').value;let a=products.filter(p=>(category==='Tous'||p.cat===category)&&p.name.toLowerCase().includes(q));if(s==='low')a.sort((x,y)=>(x.price??Infinity)-(y.price??Infinity));if(s==='high')a.sort((x,y)=>(y.price??-Infinity)-(x.price??-Infinity));document.getElementById('products').innerHTML=a.map((p,i)=>`<article class="product"><div class="pic"><img src="${p.image}" alt="${p.name}" loading="lazy"></div><div class="info"><small>${p.cat}</small><h3>${p.name}</h3><div class="price">${money(p.price)}</div><button class="add" onclick="add(${products.indexOf(p)})">Ajouter au panier</button></div></article>`).join('')||'<p class="empty">Aucun produit trouvé.</p>'}
