@@ -238,7 +238,7 @@
     }
     .cartrow{
       display:grid;
-      grid-template-columns:1fr auto auto;
+      grid-template-columns:62px 1fr auto auto;
       gap:10px;
       align-items:center;
       padding:12px 0;
@@ -257,6 +257,17 @@
       cursor:pointer;
       margin-top:12px;
     }
+
+    .pic img{cursor:zoom-in;transition:transform .2s ease}
+    .pic img:hover{transform:scale(1.03)}
+    .lightbox{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:20px}
+    .lightbox.show{display:flex}
+    .lightbox-content{max-width:95vw;max-height:90vh;display:flex;flex-direction:column;align-items:center;gap:12px}
+    .lightbox img{max-width:95vw;max-height:82vh;width:auto;height:auto;object-fit:contain;border-radius:12px;background:#fff}
+    .lightbox-title{color:#fff;text-align:center;font-weight:700;font-size:15px}
+    .lightbox-close{position:absolute;top:15px;right:15px;width:44px;height:44px;border:0;border-radius:50%;background:#fff;color:#111;font-size:24px;cursor:pointer}
+    .cart-thumb{width:62px;height:62px;border-radius:9px;object-fit:cover;background:var(--cream);cursor:zoom-in}
+    body.locked{overflow:hidden}
     @media(max-width:900px){
       .products{grid-template-columns:repeat(3,minmax(0,1fr))}
       .hero{grid-template-columns:1fr}
@@ -357,6 +368,14 @@
     </div>
     <div id="cart"></div>
     <button class="checkout" onclick="checkout()">Commander sur WhatsApp</button>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Fermer">✕</button>
+  <div class="lightbox-content">
+    <img id="lightboxImage" src="" alt="">
+    <div class="lightbox-title" id="lightboxTitle"></div>
   </div>
 </div>
 
@@ -480,6 +499,7 @@ function render(){
         <div class="pic" data-image="${p.image}">
           <img
             src="${imageUrl(p.image)}"
+            onclick="openLightbox(this.src, '${escapeHtml(p.name)}')"
             alt="${escapeHtml(p.name)}"
             loading="lazy"
             onerror="this.closest('.pic').classList.add('no-image');this.remove()"
@@ -528,6 +548,7 @@ function update(){
   cartBox.innerHTML =
     cart.map((p,i) => `
       <div class="cartrow">
+        <img class="cart-thumb" src="${imageUrl(p.image)}" alt="${escapeHtml(p.name)}" onclick="openLightbox(this.src, '${escapeHtml(p.name)}')" onerror="this.style.display='none'">
         <span>🛍️ ${escapeHtml(p.name)}</span>
         <b>${money(p.price)}</b>
         <button aria-label="Supprimer" onclick="cart.splice(${i},1);update()">✕</button>
@@ -538,12 +559,28 @@ function update(){
 
 function openCart(){
   document.getElementById('modal').classList.add('show');
+  document.body.classList.add('locked');
   update();
 }
 
 function closeCart(){
   document.getElementById('modal').classList.remove('show');
+  if(!document.getElementById('lightbox').classList.contains('show')) document.body.classList.remove('locked');
 }
+
+function openLightbox(src,title){
+  document.getElementById('lightboxImage').src=src;
+  document.getElementById('lightboxImage').alt=title;
+  document.getElementById('lightboxTitle').textContent=title;
+  document.getElementById('lightbox').classList.add('show');
+  document.body.classList.add('locked');
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('show');
+  document.getElementById('lightboxImage').src='';
+  if(!document.getElementById('modal').classList.contains('show')) document.body.classList.remove('locked');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLightbox();closeCart();}});
 
 function checkout(){
   if(!cart.length){
@@ -552,7 +589,7 @@ function checkout(){
   }
 
   const lines = cart.map(p =>
-    `- ${p.name}: ${money(p.price)}`
+    `- ${p.name}: ${money(p.price)}\n  Image: ${window.location.origin}/${encodeURI(p.image)}`
   ).join('\n');
 
   const total = cart.every(p => p.price != null)
