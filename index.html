@@ -1,17 +1,373 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>SAME-SHOP 🛍️ — Votre boutique au Sénégal</title>
-<meta name="description" content="SAME-SHOP — boutique en ligne au Sénégal. Mode, chaussures, accessoires, maison et plus encore. Commandez facilement sur WhatsApp."/>
-<style>
-:root{--brown:#9a5a16;--dark:#20170f;--cream:#fffaf4;--muted:#746b63;--line:#eadfd3;--green:#25d366}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--dark);background:#fff}a{text-decoration:none;color:inherit}.top{background:var(--dark);color:#fff;text-align:center;padding:8px;font-size:13px}.nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:12px 5%;gap:20px}.brand img{height:52px;width:90px;object-fit:contain}.links{display:flex;gap:22px;font-weight:600}.cart{border:0;background:var(--dark);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer}.hero{background:linear-gradient(135deg,var(--cream),#fff);padding:70px 5%;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:35px}.hero h1{font-size:clamp(38px,6vw,68px);line-height:.98;margin:0 0 20px}.hero h1 span{color:var(--brown)}.hero p{font-size:18px;color:var(--muted);max-width:650px}.btn{display:inline-block;margin-top:15px;background:var(--brown);color:#fff;padding:14px 22px;border-radius:12px;font-weight:800}.hero-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:25px;box-shadow:0 15px 50px #6d431b14}.hero-card img{width:100%;max-width:380px;display:block;margin:auto}.section{padding:50px 5%;max-width:1200px;margin:auto}.section h2{font-size:32px;margin:0 0 25px}.controls{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:25px}.controls input,.controls select{padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:#fff;min-width:220px}.cats{display:flex;gap:10px;flex-wrap:wrap}.cat{border:1px solid var(--line);background:#fff;padding:10px 14px;border-radius:999px;cursor:pointer}.cat.active{background:var(--dark);color:#fff}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}.pic{height:220px;background:#f5eee7;display:grid;place-items:center;overflow:hidden}.pic img{width:100%;height:100%;object-fit:cover}.info{padding:16px}.info h3{margin:0 0 7px}.price{font-weight:900;color:var(--brown);font-size:19px}.add{margin-top:12px;width:100%;border:0;background:var(--dark);color:#fff;padding:11px;border-radius:10px;font-weight:700;cursor:pointer}.why{background:var(--cream)}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{padding:22px;background:#fff;border:1px solid var(--line);border-radius:16px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px}.box{padding:25px;border:1px solid var(--line);border-radius:18px}.wa{display:inline-block;background:var(--green);color:#063b1a;padding:13px 18px;border-radius:12px;font-weight:900;margin-top:10px}.footer{background:var(--dark);color:#fff;padding:35px 5%;text-align:center}.modal{position:fixed;inset:0;background:#0008;display:none;align-items:flex-end;justify-content:center;z-index:30}.modal.show{display:flex}.sheet{background:#fff;width:min(620px,100%);border-radius:22px 22px 0 0;padding:25px;max-height:85vh;overflow:auto}.close{float:right;border:0;background:#eee;border-radius:50%;width:35px;height:35px;cursor:pointer}.cartrow{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:12px 0}.checkout{width:100%;border:0;background:var(--green);padding:14px;border-radius:12px;font-weight:900;margin-top:15px;cursor:pointer}.empty{color:var(--muted)}
-@media(max-width:900px){.hero,.contact{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}.links{display:none}}
-@media(max-width:520px){.grid{grid-template-columns:1fr}.hero{padding:45px 5%}.nav{padding:9px 4%}.brand img{height:46px}}
-</style></head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAME-SHOP — Boutique en ligne</title>
+  <meta name="description" content="SAME-SHOP — votre boutique en ligne au Sénégal.">
+  <style>
+    :root{
+      --brown:#9a5b17;
+      --dark:#21170f;
+      --cream:#f8f2e9;
+      --white:#fff;
+      --border:#e5ddd2;
+      --muted:#756c63;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--dark);
+      background:#fff;
+    }
+    header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(255,255,255,.97);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{
+      max-width:1180px;
+      margin:auto;
+      min-height:68px;
+      padding:10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .logo{
+      width:55px;
+      height:42px;
+      object-fit:contain;
+      border-radius:8px;
+      background:#fff;
+    }
+    nav{display:flex;gap:25px;align-items:center}
+    nav a{
+      color:var(--dark);
+      text-decoration:none;
+      font-size:14px;
+      font-weight:600;
+    }
+    .cart-btn,.add{
+      border:0;
+      background:var(--dark);
+      color:#fff;
+      border-radius:9px;
+      cursor:pointer;
+      font-weight:700;
+    }
+    .cart-btn{padding:11px 17px}
+    .hero{
+      max-width:1180px;
+      margin:0 auto;
+      padding:55px 18px 35px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:35px;
+      align-items:center;
+    }
+    .hero small{color:var(--brown);font-weight:800}
+    .hero h1{
+      font-size:clamp(35px,5vw,62px);
+      line-height:.98;
+      margin:12px 0 18px;
+      max-width:700px;
+    }
+    .hero p{color:var(--muted);line-height:1.6;max-width:650px}
+    .hero-card{
+      min-height:280px;
+      border:1px solid var(--border);
+      border-radius:20px;
+      background:var(--cream);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:25px;
+    }
+    .hero-card img{
+      width:100%;
+      max-width:330px;
+      height:230px;
+      object-fit:contain;
+      border-radius:15px;
+    }
+    .section{
+      max-width:1180px;
+      margin:auto;
+      padding:35px 18px 70px;
+    }
+    .section h2{font-size:30px;margin:0 0 8px}
+    .intro{color:var(--muted);margin-top:0}
+    .tools{
+      display:flex;
+      gap:10px;
+      margin:25px 0 16px;
+      flex-wrap:wrap;
+    }
+    input,select{
+      min-height:44px;
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:0 13px;
+      background:#fff;
+      color:var(--dark);
+      outline:none;
+    }
+    input{flex:1;min-width:210px}
+    select{min-width:150px}
+    .categories{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    .cat{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:999px;
+      padding:9px 14px;
+      cursor:pointer;
+      font-size:13px;
+      font-weight:600;
+    }
+    .cat.active{background:var(--dark);color:#fff;border-color:var(--dark)}
+    .products{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+    }
+    .product{
+      border:1px solid var(--border);
+      border-radius:15px;
+      overflow:hidden;
+      background:#fff;
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+    }
+    .pic{
+      height:245px;
+      background:var(--cream);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .pic img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .pic.no-image{
+      display:none;
+    }
+    .info{
+      padding:13px 12px 12px;
+      display:flex;
+      flex-direction:column;
+      flex:1;
+    }
+    .info small{color:var(--muted);font-size:11px}
+    .info h3{
+      font-size:15px;
+      line-height:1.25;
+      margin:5px 0 8px;
+      min-height:38px;
+    }
+    .price{
+      color:var(--brown);
+      font-size:16px;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .add{padding:10px 8px;width:100%;margin-top:auto}
+    .empty{
+      grid-column:1/-1;
+      text-align:center;
+      color:var(--muted);
+      padding:45px 10px;
+    }
+    footer{
+      background:var(--dark);
+      color:#fff;
+      padding:35px 18px;
+      text-align:center;
+    }
+    footer p{margin:7px 0;color:#ddd;font-size:13px}
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.55);
+      z-index:50;
+      display:none;
+      align-items:flex-end;
+      justify-content:center;
+    }
+    .modal.show{display:flex}
+    .panel{
+      background:#fff;
+      width:min(620px,100%);
+      max-height:85vh;
+      overflow:auto;
+      border-radius:20px 20px 0 0;
+      padding:22px;
+    }
+    .panel-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      position:sticky;
+      top:-22px;
+      background:#fff;
+      padding:2px 0 15px;
+    }
+    .close{
+      border:0;
+      background:#eee;
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      cursor:pointer;
+    }
+    .cartrow{
+      display:grid;
+      grid-template-columns:1fr auto auto;
+      gap:10px;
+      align-items:center;
+      padding:12px 0;
+      border-bottom:1px solid var(--border);
+      font-size:14px;
+    }
+    .cartrow button{border:0;background:transparent;cursor:pointer;font-size:18px}
+    .checkout{
+      width:100%;
+      padding:13px;
+      border:0;
+      background:#168c48;
+      color:#fff;
+      border-radius:10px;
+      font-weight:800;
+      cursor:pointer;
+      margin-top:12px;
+    }
+    @media(max-width:900px){
+      .products{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .hero{grid-template-columns:1fr}
+    }
+    @media(max-width:650px){
+      .nav{min-height:58px;padding:7px 12px}
+      nav{gap:12px}
+      nav a{font-size:12px}
+      .logo{width:45px;height:35px}
+      .cart-btn{padding:9px 11px;font-size:12px}
+      .hero{padding-top:35px}
+      .hero-card{min-height:210px}
+      .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+      .pic{height:155px}
+      .info{padding:10px}
+      .info h3{font-size:13px}
+      .price{font-size:14px}
+      .add{font-size:11px}
+    }
+    @media(max-width:380px){
+      .products{grid-template-columns:1fr}
+      .pic{height:220px}
+    }
+  </style>
+</head>
 <body>
-  <script>
+
+<header>
+  <div class="nav">
+    <a href="#accueil" aria-label="Accueil">
+      <img class="logo" src="logo.jpg" alt="SAME-SHOP">
+    </a>
+    <nav>
+      <a href="#boutique">Boutique</a>
+      <a href="#pourquoi">Pourquoi nous</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" onclick="openCart()">🛒 Panier (<span id="count">0</span>)</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="accueil">
+    <div>
+      <small>BIENVENUE CHEZ SAME-SHOP</small>
+      <h1>Tout ce qu’il vous faut, au même endroit.</h1>
+      <p>Découvrez notre sélection de produits pour hommes, femmes, maison et accessoires. Commandez facilement et contactez-nous directement sur WhatsApp.</p>
+      <a href="#boutique" class="cart-btn" style="display:inline-block;text-decoration:none;margin-top:8px">Découvrir la boutique</a>
+    </div>
+    <div class="hero-card">
+      <img src="logo.jpg" alt="Logo SAME-SHOP" onerror="this.style.display='none'">
+    </div>
+  </section>
+
+  <section class="section" id="boutique">
+    <h2>Notre boutique</h2>
+    <p class="intro">✨ Nouveaux produits ajoutés — prix affichés en FCFA.</p>
+
+    <div class="tools">
+      <input id="search" type="search" placeholder="🔎 Rechercher un produit..." oninput="render()">
+      <select id="sort" onchange="render()">
+        <option value="">Trier</option>
+        <option value="low">Prix croissant</option>
+        <option value="high">Prix décroissant</option>
+      </select>
+    </div>
+
+    <div class="categories">
+      <button class="cat active" onclick="setCat('Tous',this)">Tous</button>
+      <button class="cat" onclick="setCat('Mode',this)">👕 Mode</button>
+      <button class="cat" onclick="setCat('Chaussures',this)">👟 Chaussures</button>
+      <button class="cat" onclick="setCat('Accessoires',this)">👜 Accessoires</button>
+      <button class="cat" onclick="setCat('Maison',this)">🏠 Maison</button>
+      <button class="cat" onclick="setCat('Autres',this)">✨ Autres</button>
+    </div>
+
+    <div class="products" id="products"></div>
+  </section>
+
+  <section class="section" id="pourquoi" style="padding-top:0">
+    <h2>Pourquoi nous ?</h2>
+    <p class="intro">Une boutique simple, des prix en FCFA et une commande rapide par WhatsApp.</p>
+  </section>
+</main>
+
+<footer id="contact">
+  <strong>SAME-SHOP</strong>
+  <p>Votre boutique en ligne</p>
+  <p>WhatsApp : +221 70 949 81 24</p>
+  <p>© <span id="year"></span> SAME-SHOP</p>
+</footer>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeCart()">
+  <div class="panel">
+    <div class="panel-head">
+      <h2>🛒 Votre panier</h2>
+      <button class="close" onclick="closeCart()">✕</button>
+    </div>
+    <div id="cart"></div>
+    <button class="checkout" onclick="checkout()">Commander sur WhatsApp</button>
+  </div>
+</div>
+
+<script>
+/*
+  IMPORTANT POUR VERCEL :
+  Les images de ton dépôt GitHub sont à la RACINE du projet.
+  Il ne faut donc PAS écrire "products/nom.jpg".
+  Les chemins ci-dessous utilisent exactement les noms de fichiers du dépôt.
+*/
+
 const products = [
   {name:'Étagère à chaussures',cat:'Maison',price:10000,image:'etagere-chaussures.jpg'},
   {name:'Montre téléphone GSM',cat:'Accessoires',price:15000,image:'montre-telephone.jpg'},
@@ -23,20 +379,16 @@ const products = [
   {name:'Coffret de parfums',cat:'Accessoires',price:7000,image:'coffret-parfums.jpg'},
   {name:'Sac à dos multifonction',cat:'Accessoires',price:8000,image:'sac-a-dos.jpg'},
   {name:'Sac femme',cat:'Accessoires',price:6500,image:'sac-femme.jpg'},
-
   {name:'Coffret parfums Angel Elves Homme',cat:'Accessoires',price:7000,image:'coffret-parfums-angel-elves-homme.jpg'},
   {name:'Coffret parfums Angel Elves Femme',cat:'Accessoires',price:7000,image:'coffret-parfums-angel-elves-femme.jpg'},
   {name:'Coffret parfums Angel Elves Mixte',cat:'Accessoires',price:7000,image:'coffret-parfums-angel-elves-mixte.jpg'},
-
   {name:'Crampons football Blanc & Vert',cat:'Chaussures',price:13000,image:'crampons-football-blanc-vert.jpg'},
   {name:'Crampons football Blanc & Bleu',cat:'Chaussures',price:13000,image:'crampons-football-blanc-bleu.jpg'},
   {name:'Crampons football Orange',cat:'Chaussures',price:13000,image:'crampons-football-orange.jpg'},
-
   {name:'Ensemble homme Marron',cat:'Mode',price:7000,image:'ensemble-homme-marron.jpg'},
   {name:'Ensemble homme Rouge',cat:'Mode',price:7500,image:'ensemble-homme-rouge.jpg'},
   {name:'Ensemble homme Rose',cat:'Mode',price:7500,image:'ensemble-homme-rose.jpg'},
   {name:'Ensemble homme 1997 Noir',cat:'Mode',price:7000,image:'ensemble-homme-1997-noir.jpg'},
-
   {name:'Ensemble montre & bracelets doré',cat:'Accessoires',price:5000,image:'montre-set-dore.jpg'},
   {name:'Ensemble montre & bracelets bleu',cat:'Accessoires',price:4000,image:'montre-set-bleu.jpg'},
   {name:'Montre Geneva chronographe acier',cat:'Accessoires',price:3500,image:'montre-geneva-chronographe.jpg'},
@@ -47,13 +399,11 @@ const products = [
   {name:'Montre carrée bleue',cat:'Accessoires',price:3500,image:'montre-carree-bleue.jpg'},
   {name:'Montre BOLUN blanche et bleue',cat:'Accessoires',price:3500,image:'montre-bolun-bleue.jpg'},
   {name:'Montre COGONG rouge',cat:'Accessoires',price:4000,image:'montre-cogong-rouge.jpg'},
-
   {name:'Sac cabas motif africain',cat:'Accessoires',price:6500,image:'sac-cabas-africain.jpg'},
   {name:'Sac cabas noir motif fille',cat:'Accessoires',price:6500,image:'sac-cabas-noir-fille.jpg'},
   {name:'Sac cabas rose femme',cat:'Accessoires',price:6500,image:'sac-cabas-rose-femme.jpg'},
   {name:'Sac cabas rose anime',cat:'Accessoires',price:6500,image:'sac-cabas-rose-anime.jpg'},
   {name:'Sac cabas beige femme',cat:'Accessoires',price:6500,image:'sac-cabas-beige-femme.jpg'},
-
   {name:'Ensemble montre & bracelets noir',cat:'Accessoires',price:5000,image:'montre-set-noir-1.jpg'},
   {name:'Ensemble montre homme noir',cat:'Accessoires',price:5000,image:'montre-set-noir-2.jpg'},
   {name:'Montre ZHPEER dorée',cat:'Accessoires',price:5000,image:'montre-zhpeer-doree.jpg'},
@@ -76,7 +426,6 @@ const products = [
   {name:'Montre BOLUN bleue – modèle 3',cat:'Accessoires',price:3500,image:'montre-bolun-bleue-3.jpg'},
   {name:'Montre BOLUN dorée cuir',cat:'Accessoires',price:3500,image:'montre-bolun-doree-cuir.jpg'},
   {name:'Montre bleue cuir marron',cat:'Accessoires',price:3500,image:'montre-bleue-cuir-marron.jpg'},
-
   {name:'Ensemble sac à dos gris',cat:'Accessoires',price:8000,image:'sac-set-gris.jpg'},
   {name:'Ensemble sac bleu ciel',cat:'Accessoires',price:8000,image:'sac-set-bleu-ciel.jpg'},
   {name:'Ensemble sac 3 en 1 noir',cat:'Accessoires',price:8000,image:'sac-set-3-en-1.jpg'},
@@ -84,22 +433,146 @@ const products = [
   {name:'Ensemble sac blanc et noir',cat:'Accessoires',price:8000,image:'sac-set-blanc-noir.jpg'},
   {name:'Ensemble sac à dos noir 5 pièces',cat:'Accessoires',price:8000,image:'sac-set-5-pieces.jpg'}
 ];
-  </script>
-<div class="top">🇸🇳 Livraison au Sénégal • Commande simple par WhatsApp • Paiement à convenir</div>
-<nav class="nav"><a class="brand" href="#accueil"><img src="logo.jpg" alt="SAME-SHOP"></a><div class="links"><a href="#boutique">Boutique</a><a href="#pourquoi">Pourquoi nous</a><a href="#contact">Contact</a></div><button class="cart" onclick="openCart()">🛒 Panier (<span id="count">0</span>)</button></nav>
-<section class="hero" id="accueil"><div><p style="font-weight:800;color:var(--brown)">BIENVENUE CHEZ SAME-SHOP 🛍️</p><h1>Tout ce qu’il vous faut, <span>au même endroit.</span></h1><p>Découvrez une sélection de produits pour hommes, femmes, maison et quotidien. Choisissez vos articles et envoyez votre commande directement sur WhatsApp.</p><a class="btn" href="#boutique">Découvrir la boutique →</a></div><div class="hero-card"><img src="logo.jpg" alt="Logo SAME-SHOP"></div></section>
-<section class="section" id="boutique"><h2>Notre boutique</h2><p style="color:var(--muted)">✨ Nouveaux produits ajoutés — prix affichés en FCFA.</p><div class="controls"><input id="search" placeholder="🔎 Rechercher un produit..." oninput="render()"><select id="sort" onchange="render()"><option value="default">Trier</option><option value="low">Prix croissant</option><option value="high">Prix décroissant</option></select></div><div class="cats"><button class="cat active" onclick="setCat('Tous',this)">Tous</button><button class="cat" onclick="setCat('Mode',this)">👕 Mode</button><button class="cat" onclick="setCat('Chaussures',this)">👟 Chaussures</button><button class="cat" onclick="setCat('Accessoires',this)">👜 Accessoires</button><button class="cat" onclick="setCat('Maison',this)">🏠 Maison</button><button class="cat" onclick="setCat('Autres',this)">✨ Autres</button></div><br><div class="grid" id="products"></div></section>
-<section class="why" id="pourquoi"><div class="section"><h2>Pourquoi SAME-SHOP ?</h2><div class="features"><div class="feature"><h3>🇸🇳 Pensé pour le Sénégal</h3><p>Une boutique en ligne simple et adaptée aux commandes locales.</p></div><div class="feature"><h3>💬 Commande WhatsApp</h3><p>Pas besoin de créer un compte : votre panier est envoyé directement à notre WhatsApp.</p></div><div class="feature"><h3>🛍️ Plusieurs catégories</h3><p>Mode, chaussures, accessoires, maison et beaucoup d’autres produits.</p></div></div></div></section>
-<section class="section" id="contact"><h2>Contactez-nous</h2><div class="contact"><div class="box"><h3>📱 WhatsApp</h3><p>Une question ou une commande ? Écrivez-nous directement.</p><a class="wa" href="https://wa.me/221709498124?text=Bonjour%20SAME-SHOP%20%F0%9F%9B%8D%EF%B8%8F%2C%20je%20souhaite%20passer%20une%20commande." target="_blank">💬 Ouvrir WhatsApp</a></div><div class="box"><h3>📍 Sénégal</h3><p>Livraison disponible au Sénégal. Les frais et modalités de livraison sont confirmés lors de la commande.</p></div></div></section>
-<footer class="footer">© <span id="year"></span> SAME-SHOP 🛍️ — Votre boutique en ligne au Sénégal</footer>
-<div class="modal" id="modal" onclick="if(event.target===this)closeCart()"><div class="sheet"><button class="close" onclick="closeCart()">✕</button><h2>Votre panier 🛒</h2><div id="cart"></div><button class="checkout" onclick="checkout()">Commander sur WhatsApp</button></div></div}];
-let category='Tous',cart=[];
-function money(n){return n==null?'Prix à confirmer':new Intl.NumberFormat('fr-FR').format(n)+' FCFA'}
-function setCat(c,el){category=c;document.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));el.classList.add('active');render()}
-function render(){let q=document.getElementById('search').value.toLowerCase(),s=document.getElementById('sort').value;let a=products.filter(p=>(category==='Tous'||p.cat===category)&&p.name.toLowerCase().includes(q));if(s==='low')a.sort((x,y)=>(x.price??Infinity)-(y.price??Infinity));if(s==='high')a.sort((x,y)=>(y.price??-Infinity)-(x.price??-Infinity));document.getElementById('products').innerHTML=a.map((p,i)=>`<article class="product"><div class="pic"><img src="${p.image}" alt="${p.name}" loading="lazy"></div><div class="info"><small>${p.cat}</small><h3>${p.name}</h3><div class="price">${money(p.price)}</div><button class="add" onclick="add(${products.indexOf(p)})">Ajouter au panier</button></div></article>`).join('')||'<p class="empty">Aucun produit trouvé.</p>'}
-function add(i){cart.push(products[i]);update();openCart()}
-function update(){document.getElementById('count').textContent=cart.length;document.getElementById('cart').innerHTML=cart.length?cart.map((p,i)=>`<div class="cartrow"><span>🛍️ ${p.name}</span><b>${money(p.price)}</b><button onclick="cart.splice(${i},1);update()">✕</button></div>`).join('')+`<h3>Total : ${cart.every(p=>p.price!=null)?money(cart.reduce((s,p)=>s+p.price,0)):'Prix à confirmer'}</h3>`:'<p class="empty">Votre panier est vide.</p>'}
-function openCart(){document.getElementById('modal').classList.add('show');update()}function closeCart(){document.getElementById('modal').classList.remove('show')}
-function checkout(){if(!cart.length)return alert('Votre panier est vide.');let lines=cart.map(p=>`- ${p.name}: ${money(p.price)}`).join('%0A');let total=cart.every(p=>p.price!=null)?money(cart.reduce((s,p)=>s+p.price,0)):'Prix à confirmer';let text=`Bonjour SAME-SHOP 🛍️, je souhaite commander :%0A${lines}%0A%0ATotal estimé : ${total}%0A%0AMerci de me confirmer la disponibilité et la livraison.`;window.open('https://wa.me/221709498124?text='+text,'_blank')}
-document.getElementById('year').textContent=new Date().getFullYear();render();
-</script></body></html>
+
+let category = 'Tous';
+let cart = [];
+
+function money(n){
+  return n == null ? 'Prix à confirmer' :
+    new Intl.NumberFormat('fr-FR').format(n) + ' FCFA';
+}
+
+function setCat(c,el){
+  category = c;
+  document.querySelectorAll('.cat').forEach(x => x.classList.remove('active'));
+  el.classList.add('active');
+  render();
+}
+
+function imageUrl(filename){
+  // Les fichiers sont à la racine de GitHub/Vercel.
+  return encodeURI('./' + filename);
+}
+
+function render(){
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const s = document.getElementById('sort').value;
+
+  let list = products.filter(p =>
+    (category === 'Tous' || p.cat === category) &&
+    p.name.toLowerCase().includes(q)
+  );
+
+  if(s === 'low') list.sort((a,b) => (a.price ?? Infinity) - (b.price ?? Infinity));
+  if(s === 'high') list.sort((a,b) => (b.price ?? -Infinity) - (a.price ?? -Infinity));
+
+  const container = document.getElementById('products');
+
+  if(!list.length){
+    container.innerHTML = '<p class="empty">Aucun produit trouvé.</p>';
+    return;
+  }
+
+  container.innerHTML = list.map((p) => {
+    const index = products.indexOf(p);
+    return `
+      <article class="product">
+        <div class="pic" data-image="${p.image}">
+          <img
+            src="${imageUrl(p.image)}"
+            alt="${escapeHtml(p.name)}"
+            loading="lazy"
+            onerror="this.closest('.pic').classList.add('no-image');this.remove()"
+          >
+        </div>
+        <div class="info">
+          <small>${escapeHtml(p.cat)}</small>
+          <h3>${escapeHtml(p.name)}</h3>
+          <div class="price">${money(p.price)}</div>
+          <button class="add" onclick="add(${index})">Ajouter au panier</button>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+function escapeHtml(value){
+  return String(value)
+    .replaceAll('&','&amp;')
+    .replaceAll('<','&lt;')
+    .replaceAll('>','&gt;')
+    .replaceAll('"','&quot;')
+    .replaceAll("'","&#039;");
+}
+
+function add(i){
+  cart.push(products[i]);
+  update();
+  openCart();
+}
+
+function update(){
+  document.getElementById('count').textContent = cart.length;
+
+  const cartBox = document.getElementById('cart');
+
+  if(!cart.length){
+    cartBox.innerHTML = '<p class="empty">Votre panier est vide.</p>';
+    return;
+  }
+
+  const total = cart.every(p => p.price != null)
+    ? money(cart.reduce((sum,p) => sum + p.price,0))
+    : 'Prix à confirmer';
+
+  cartBox.innerHTML =
+    cart.map((p,i) => `
+      <div class="cartrow">
+        <span>🛍️ ${escapeHtml(p.name)}</span>
+        <b>${money(p.price)}</b>
+        <button aria-label="Supprimer" onclick="cart.splice(${i},1);update()">✕</button>
+      </div>
+    `).join('') +
+    `<h3>Total : ${total}</h3>`;
+}
+
+function openCart(){
+  document.getElementById('modal').classList.add('show');
+  update();
+}
+
+function closeCart(){
+  document.getElementById('modal').classList.remove('show');
+}
+
+function checkout(){
+  if(!cart.length){
+    alert('Votre panier est vide.');
+    return;
+  }
+
+  const lines = cart.map(p =>
+    `- ${p.name}: ${money(p.price)}`
+  ).join('\n');
+
+  const total = cart.every(p => p.price != null)
+    ? money(cart.reduce((sum,p) => sum + p.price,0))
+    : 'Prix à confirmer';
+
+  const text =
+    `Bonjour SAME-SHOP 🛍️, je souhaite commander :\n` +
+    `${lines}\n\n` +
+    `Total estimé : ${total}\n\n` +
+    `Merci de me confirmer la disponibilité et la livraison.`;
+
+  window.open(
+    'https://wa.me/221709498124?text=' + encodeURIComponent(text),
+    '_blank'
+  );
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
