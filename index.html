@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#20170f"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><link rel="manifest" href="manifest.webmanifest"/><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"/>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#20170f"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><link rel="manifest" href="manifest.webmanifest"/>
 <title>SAME-SHOP 🛍️ — Votre boutique au Sénégal</title><meta name="version" content="105-produits-v3">
 <meta name="description" content="SAME-SHOP — boutique en ligne au Sénégal. Mode, chaussures, accessoires, maison et plus encore. Commandez facilement sur WhatsApp."/>
 <style>
@@ -28,6 +28,14 @@
 .optionbtn{border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:10px;cursor:pointer}.optionbtn.selected{background:var(--dark);color:#fff}
 .detailclose{position:absolute;right:14px;top:14px;border:0;background:#eee;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:18px}
 @media(max-width:700px){.detailgrid{grid-template-columns:1fr}.detailbox{padding:16px}}
+
+/* SAME-SHOP: catalogue always visible, 2 columns */
+#products{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:14px !important;align-items:start;}
+#products .product{min-width:0;display:flex;flex-direction:column;height:100%;}
+#products .pic{overflow:hidden;}
+#products .pic img{display:block;width:100%;height:auto;max-width:100%;object-fit:cover;}
+@media (min-width:900px){#products{grid-template-columns:repeat(4,minmax(0,1fr)) !important;gap:20px !important;}}
+@media (max-width:600px){#products{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important;}#products .info h3{font-size:14px;line-height:1.25;}#products .price{font-size:16px;}}
 </style></head>
 <body>
 <div class="top">🇸🇳 Livraison au Sénégal • Commande simple par WhatsApp • Paiement à convenir</div>
@@ -342,5 +350,7 @@ if(installBtn) installBtn.addEventListener('click', async()=>{
 });
 window.addEventListener('appinstalled',()=>{ const bar=document.getElementById('installBar'); if(bar) bar.style.display='none'; });
 
+
+try{render();}catch(e){console.error("SAME-SHOP render error",e);}
 </script>
 </body></html>
