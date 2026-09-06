@@ -1,46 +1,4 @@
-<!doctype html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#20170f"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><link rel="manifest" href="manifest.webmanifest"/><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"/>
-<title>SAME-SHOP 🛍️ — Votre boutique au Sénégal</title><meta name="version" content="105-produits-v3">
-<meta name="description" content="SAME-SHOP — boutique en ligne au Sénégal. Mode, chaussures, accessoires, maison et plus encore. Commandez facilement sur WhatsApp."/>
-<style>
-:root{--brown:#9a5a16;--dark:#20170f;--cream:#fffaf4;--muted:#746b63;--line:#eadfd3;--green:#25d366}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--dark);background:#fff}a{text-decoration:none;color:inherit}.top{background:var(--dark);color:#fff;text-align:center;padding:8px;font-size:13px}.nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:12px 5%;gap:20px}.brand img{height:52px;width:90px;object-fit:contain}.links{display:flex;gap:22px;font-weight:600}.cart{border:0;background:var(--dark);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer}.hero{background:linear-gradient(135deg,var(--cream),#fff);padding:70px 5%;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:35px}.hero h1{font-size:clamp(38px,6vw,68px);line-height:.98;margin:0 0 20px}.hero h1 span{color:var(--brown)}.hero p{font-size:18px;color:var(--muted);max-width:650px}.btn{display:inline-block;margin-top:15px;background:var(--brown);color:#fff;padding:14px 22px;border-radius:12px;font-weight:800}.hero-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:25px;box-shadow:0 15px 50px #6d431b14}.hero-card img{width:100%;max-width:380px;display:block;margin:auto}.section{padding:50px 5%;max-width:1200px;margin:auto}.section h2{font-size:32px;margin:0 0 25px}.controls{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:25px}.controls input,.controls select{padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:#fff;min-width:220px}.cats{display:flex;gap:10px;flex-wrap:wrap}.cat{border:1px solid var(--line);background:#fff;padding:10px 14px;border-radius:999px;cursor:pointer}.cat.active{background:var(--dark);color:#fff}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.product{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}.pic{height:250px;background:#f7f2ec;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px}.pic img{width:100%;height:100%;object-fit:contain;display:block;border-radius:12px}.info{padding:16px}.info h3{margin:0 0 7px}.price{font-weight:900;color:var(--brown);font-size:19px}.add{margin-top:12px;width:100%;border:0;background:var(--dark);color:#fff;padding:11px;border-radius:10px;font-weight:700;cursor:pointer}.why{background:var(--cream)}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{padding:22px;background:#fff;border:1px solid var(--line);border-radius:16px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px}.box{padding:25px;border:1px solid var(--line);border-radius:18px}.wa{display:inline-block;background:var(--green);color:#063b1a;padding:13px 18px;border-radius:12px;font-weight:900;margin-top:10px}.footer{background:var(--dark);color:#fff;padding:35px 5%;text-align:center}.modal{position:fixed;inset:0;background:#0008;display:none;align-items:flex-end;justify-content:center;z-index:30}.modal.show{display:flex}.sheet{background:#fff;width:min(620px,100%);border-radius:22px 22px 0 0;padding:25px;max-height:85vh;overflow:auto}.close{float:right;border:0;background:#eee;border-radius:50%;width:35px;height:35px;cursor:pointer}.cartrow{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:12px 0}.checkout{width:100%;border:0;background:var(--green);padding:14px;border-radius:12px;font-weight:900;margin-top:15px;cursor:pointer}.wavebtn{width:100%;border:0;background:#1f8fff;color:#fff;padding:14px;border-radius:12px;font-weight:900;margin-top:10px;cursor:pointer}.paynote{font-size:13px;color:var(--muted);margin-top:8px;text-align:center}.empty{color:var(--muted)}
-@media(max-width:900px){.hero,.contact{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}.links{display:none}}
-@media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}.hero{padding:45px 5%}.nav{padding:9px 4%}.brand img{height:46px}}
 
-.qty{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;padding:5px;background:#fff}
-.qty button{width:34px;height:34px;border:0;border-radius:9px;background:var(--dark);color:#fff;font-size:20px;cursor:pointer}
-.qty span{min-width:24px;text-align:center;font-weight:800}
-.cartitem{display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:12px 0}
-.cartitem img{width:58px;height:58px;object-fit:cover;border-radius:10px;background:#f5eee7}
-.cartmeta{font-size:13px;color:var(--muted);margin-top:3px}
-.product .pic{cursor:pointer}
-.product .pic img{transition:transform .2s}.product .pic:hover img{transform:scale(1.04)}
-.product-actions{display:flex;gap:8px;margin-top:12px}.product-actions .add{margin-top:0;flex:1}
-.details{display:none;position:fixed;inset:0;background:#0009;z-index:40;align-items:center;justify-content:center;padding:18px}
-.details.show{display:flex}
-.detailbox{background:#fff;width:min(760px,100%);max-height:92vh;overflow:auto;border-radius:22px;padding:22px;position:relative}
-.detailgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
-.detailimg{width:100%;height:430px;object-fit:contain;background:#f7f2ec;border-radius:16px;padding:12px}
-.option{margin-top:15px}.option label{display:block;font-weight:800;margin-bottom:8px}.options{display:flex;gap:7px;flex-wrap:wrap}
-.optionbtn{border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:10px;cursor:pointer}.optionbtn.selected{background:var(--dark);color:#fff}
-.detailclose{position:absolute;right:14px;top:14px;border:0;background:#eee;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:18px}
-@media(max-width:700px){.detailgrid{grid-template-columns:1fr}.detailbox{padding:16px}}
-</style></head>
-<body>
-<div class="top">🇸🇳 Livraison au Sénégal • Commande simple par WhatsApp • Paiement à convenir</div>
-<div id="installBar" style="display:none;background:#20170f;color:#fff;padding:10px 5%;text-align:center;font-size:14px;position:sticky;top:0;z-index:20">📲 Installez SAME-SHOP sur votre téléphone <button id="installBtn" style="margin-left:8px;border:0;background:#9a5a16;color:#fff;padding:8px 13px;border-radius:10px;font-weight:800">Installer</button></div>
-<nav class="nav"><a class="brand" href="#accueil"><img src="logo.jpg" alt="SAME-SHOP"></a><div class="links"><a href="#boutique">Boutique</a><a href="#pourquoi">Pourquoi nous</a><a href="#contact">Contact</a></div><button class="cart" onclick="openCart()">🛒 Panier (<span id="count">0</span>)</button></nav>
-<section class="hero" id="accueil"><div><p style="font-weight:800;color:var(--brown)">BIENVENUE CHEZ SAME-SHOP 🛍️</p><h1>Tout ce qu’il vous faut, <span>au même endroit.</span></h1><p>Découvrez une sélection de produits pour hommes, femmes, maison et quotidien. Choisissez vos articles et envoyez votre commande directement sur WhatsApp.</p><a class="btn" href="#boutique">Découvrir la boutique →</a></div><div class="hero-card"><img src="logo.jpg" alt="Logo SAME-SHOP"></div></section>
-<section class="section" id="boutique"><h2>Notre boutique</h2><p style="color:var(--muted)">✨ Nouveaux produits ajoutés — prix affichés en FCFA.</p><div class="controls"><input id="search" placeholder="🔎 Rechercher un produit..." oninput="render()"><select id="sort" onchange="render()"><option value="default">Trier</option><option value="low">Prix croissant</option><option value="high">Prix décroissant</option></select></div><div class="cats"><button class="cat active" onclick="setCat('Tous',this)">Tous</button><button class="cat" onclick="setCat('Mode',this)">👕 Mode</button><button class="cat" onclick="setCat('Chaussures',this)">👟 Chaussures</button><button class="cat" onclick="setCat('Accessoires',this)">👜 Accessoires</button><button class="cat" onclick="setCat('Maison',this)">🏠 Maison</button><button class="cat" onclick="setCat('Autres',this)">✨ Autres</button></div><br><div class="grid" id="products"></div></section>
-<section class="why" id="pourquoi"><div class="section"><h2>Pourquoi SAME-SHOP ?</h2><div class="features"><div class="feature"><h3>🇸🇳 Pensé pour le Sénégal</h3><p>Une boutique en ligne simple et adaptée aux commandes locales.</p></div><div class="feature"><h3>💬 Commande WhatsApp</h3><p>Pas besoin de créer un compte : votre panier est envoyé directement à notre WhatsApp.</p></div><div class="feature"><h3>🛍️ Plusieurs catégories</h3><p>Mode, chaussures, accessoires, maison et beaucoup d’autres produits.</p></div></div></div></section>
-<section class="section" id="contact"><h2>Contactez-nous</h2><div class="contact"><div class="box"><h3>📱 WhatsApp</h3><p>Une question ou une commande ? Écrivez-nous directement.</p><a class="wa" href="https://wa.me/221709498124?text=Bonjour%20SAME-SHOP%20%F0%9F%9B%8D%EF%B8%8F%2C%20je%20souhaite%20passer%20une%20commande." target="_blank">💬 Ouvrir WhatsApp</a></div><div class="box"><h3>📍 Sénégal</h3><p>Livraison disponible au Sénégal. Les frais et modalités de livraison sont confirmés lors de la commande.</p></div></div></section>
-<footer class="footer">© <span id="year"></span> SAME-SHOP 🛍️ — Votre boutique en ligne au Sénégal</footer>
-<div class="modal" id="modal" onclick="if(event.target===this)closeCart()"><div class="sheet"><button class="close" onclick="closeCart()">✕</button><h2>Votre panier 🛒</h2><div id="cart"></div><button class="wavebtn" onclick="payWave()">💳 Payer avec Wave</button><div class="paynote">Après le paiement, revenez ici puis envoyez votre commande sur WhatsApp.</div><button class="checkout" onclick="checkout()">📲 Envoyer la commande sur WhatsApp</button></div></div>
-<div class="details" id="details" onclick="if(event.target===this)closeDetails()"><div class="detailbox"><button class="detailclose" onclick="closeDetails()">✕</button><div id="detailContent"></div></div></div>
-<script>
 const products=[
 {name:'Étagère à chaussures avec rangement',cat:'Maison',price:10000,image:'etagere-chaussures.jpg'},
 {name:'Montre téléphone connectée GSM',cat:'Accessoires',price:15000,image:'montre-telephone.jpg'},
@@ -161,8 +119,8 @@ function render(){
  let a=products.filter(p=>(category==='Tous'||p.cat===category)&&p.name.toLowerCase().includes(q));
  if(s==='low')a.sort((x,y)=>(x.price??Infinity)-(y.price??Infinity));
  if(s==='high')a.sort((x,y)=>(y.price??-Infinity)-(x.price??-Infinity));
- document.getElementById('productCount').textContent=`(${a.length} produits)`; document.getElementById('products').innerHTML=a.map(p=>`<article class="product">
- <div class="pic" onclick="openDetails(${products.indexOf(p)})"><img src="${p.image}" alt="${p.name}" loading="eager" decoding="async" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div style="padding:20px;text-align:center;color:#746b63">Image indisponible</div>')"></div>
+ document.getElementById('products').innerHTML=a.map(p=>`<article class="product">
+ <div class="pic" onclick="openDetails(${products.indexOf(p)})"><img src="${p.image}" alt="${p.name}" loading="lazy"></div>
  <div class="info"><small>${p.cat}</small><h3>${p.name}</h3><div class="price">${money(p.price)}</div>
  <div class="product-actions"><button class="add" onclick="openDetails(${products.indexOf(p)})">Ajouter au panier</button></div></div></article>`).join('')||'<p class="empty">Aucun produit trouvé.</p>'
 }
@@ -222,20 +180,3 @@ function checkout(){
   window.open('https://wa.me/221709498124?text='+text,'_blank')
 }
 document.getElementById('year').textContent=new Date().getFullYear();render();
-</script>
-<script>
-let deferredInstallPrompt = null;
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault(); deferredInstallPrompt = e;
-  const bar=document.getElementById('installBar'); if(bar) bar.style.display='block';
-});
-const installBtn=document.getElementById('installBtn');
-if(installBtn) installBtn.addEventListener('click', async()=>{
-  if(!deferredInstallPrompt) return;
-  deferredInstallPrompt.prompt(); await deferredInstallPrompt.userChoice; deferredInstallPrompt=null;
-  const bar=document.getElementById('installBar'); if(bar) bar.style.display='none';
-});
-window.addEventListener('appinstalled',()=>{ const bar=document.getElementById('installBar'); if(bar) bar.style.display='none'; });
-
-</script>
-</body></html>
