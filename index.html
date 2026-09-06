@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#20170f"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><link rel="manifest" href="manifest.webmanifest"/>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#20170f"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 <title>SAME-SHOP 🛍️ — Votre boutique au Sénégal</title><meta name="version" content="105-produits-v3">
 <meta name="description" content="SAME-SHOP — boutique en ligne au Sénégal. Mode, chaussures, accessoires, maison et plus encore. Commandez facilement sur WhatsApp."/>
 <style>
@@ -42,7 +42,7 @@
 <div id="installBar" style="display:none;background:#20170f;color:#fff;padding:10px 5%;text-align:center;font-size:14px;position:sticky;top:0;z-index:20">📲 Installez SAME-SHOP sur votre téléphone <button id="installBtn" style="margin-left:8px;border:0;background:#9a5a16;color:#fff;padding:8px 13px;border-radius:10px;font-weight:800">Installer</button></div>
 <nav class="nav"><a class="brand" href="#accueil"><img src="logo.jpg" alt="SAME-SHOP"></a><div class="links"><a href="#boutique">Boutique</a><a href="#pourquoi">Pourquoi nous</a><a href="#contact">Contact</a></div><button class="cart" onclick="openCart()">🛒 Panier (<span id="count">0</span>)</button></nav>
 <section class="hero" id="accueil"><div><p style="font-weight:800;color:var(--brown)">BIENVENUE CHEZ SAME-SHOP 🛍️</p><h1>Tout ce qu’il vous faut, <span>au même endroit.</span></h1><p>Découvrez une sélection de produits pour hommes, femmes, maison et quotidien. Choisissez vos articles et envoyez votre commande directement sur WhatsApp.</p><a class="btn" href="#boutique">Découvrir la boutique →</a></div><div class="hero-card"><img src="logo.jpg" alt="Logo SAME-SHOP"></div></section>
-<section class="section" id="boutique"><h2>Notre boutique</h2><p style="color:var(--muted)">✨ Nouveaux produits ajoutés — prix affichés en FCFA.</p><div class="controls"><input id="search" placeholder="🔎 Rechercher un produit..." oninput="render()"><select id="sort" onchange="render()"><option value="default">Trier</option><option value="low">Prix croissant</option><option value="high">Prix décroissant</option></select></div><div class="cats"><button class="cat active" onclick="setCat('Tous',this)">Tous</button><button class="cat" onclick="setCat('Mode',this)">👕 Mode</button><button class="cat" onclick="setCat('Chaussures',this)">👟 Chaussures</button><button class="cat" onclick="setCat('Accessoires',this)">👜 Accessoires</button><button class="cat" onclick="setCat('Maison',this)">🏠 Maison</button><button class="cat" onclick="setCat('Autres',this)">✨ Autres</button></div><br><div class="grid" id="products"><article class="product static-product"><div class="pic"><img src="./etagere-chaussures.jpg" alt="Étagère à chaussures avec rangement" loading="eager" decoding="async"></div><div class="info"><small>Maison</small><h3>Étagère à chaussures avec rangement</h3><div class="price">10000 FCFA</div><div class="product-actions"><button class="add" type="button" onclick="openDetails(0)">Ajouter au panier</button></div></div></article>
+<section class="section" id="boutique"><h2>Notre boutique</h2><p style="color:var(--muted)">✨ 105 produits disponibles — prix affichés en FCFA.</p><p id="productCount" style="color:var(--muted);margin-top:-15px"></p><div class="controls"><input id="search" placeholder="🔎 Rechercher un produit..." oninput="render()"><select id="sort" onchange="render()"><option value="default">Trier</option><option value="low">Prix croissant</option><option value="high">Prix décroissant</option></select></div><div class="cats"><button class="cat active" onclick="setCat('Tous',this)">Tous</button><button class="cat" onclick="setCat('Mode',this)">👕 Mode</button><button class="cat" onclick="setCat('Chaussures',this)">👟 Chaussures</button><button class="cat" onclick="setCat('Accessoires',this)">👜 Accessoires</button><button class="cat" onclick="setCat('Maison',this)">🏠 Maison</button><button class="cat" onclick="setCat('Autres',this)">✨ Autres</button></div><br><div class="grid" id="products"><article class="product static-product"><div class="pic"><img src="./etagere-chaussures.jpg" alt="Étagère à chaussures avec rangement" loading="eager" decoding="async"></div><div class="info"><small>Maison</small><h3>Étagère à chaussures avec rangement</h3><div class="price">10000 FCFA</div><div class="product-actions"><button class="add" type="button" onclick="openDetails(0)">Ajouter au panier</button></div></div></article>
 <article class="product static-product"><div class="pic"><img src="./montre-telephone.jpg" alt="Montre téléphone connectée GSM" loading="eager" decoding="async"></div><div class="info"><small>Accessoires</small><h3>Montre téléphone connectée GSM</h3><div class="price">15000 FCFA</div><div class="product-actions"><button class="add" type="button" onclick="openDetails(1)">Ajouter au panier</button></div></div></article>
 <article class="product static-product"><div class="pic"><img src="./smartphone.jpg" alt="Smartphone Android" loading="eager" decoding="async"></div><div class="info"><small>Autres</small><h3>Smartphone Android</h3><div class="price">160000 FCFA</div><div class="product-actions"><button class="add" type="button" onclick="openDetails(2)">Ajouter au panier</button></div></div></article>
 <article class="product static-product"><div class="pic"><img src="./bouilloire.jpg" alt="Bouilloire électrique" loading="eager" decoding="async"></div><div class="info"><small>Maison</small><h3>Bouilloire électrique</h3><div class="price">8000 FCFA</div><div class="product-actions"><button class="add" type="button" onclick="openDetails(3)">Ajouter au panier</button></div></div></article>
@@ -273,7 +273,7 @@ function render(){
  let a=products.filter(p=>(category==='Tous'||p.cat===category)&&p.name.toLowerCase().includes(q));
  if(s==='low')a.sort((x,y)=>(x.price??Infinity)-(y.price??Infinity));
  if(s==='high')a.sort((x,y)=>(y.price??-Infinity)-(x.price??-Infinity));
- document.getElementById('productCount').textContent=`(${a.length} produits)`; document.getElementById('products').innerHTML=a.map(p=>`<article class="product">
+ const pc=document.getElementById('productCount'); if(pc) pc.textContent=`(${a.length} produits)`; document.getElementById('products').innerHTML=a.map(p=>`<article class="product">
  <div class="pic" onclick="openDetails(${products.indexOf(p)})"><img src="${p.image}" alt="${p.name}" loading="eager" decoding="async" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div style="padding:20px;text-align:center;color:#746b63">Image indisponible</div>')"></div>
  <div class="info"><small>${p.cat}</small><h3>${p.name}</h3><div class="price">${money(p.price)}</div>
  <div class="product-actions"><button class="add" onclick="openDetails(${products.indexOf(p)})">Ajouter au panier</button></div></div></article>`).join('')||'<p class="empty">Aucun produit trouvé.</p>'
@@ -334,7 +334,7 @@ function checkout(){
   window.open('https://wa.me/221709498124?text='+text,'_blank')
 }
 document.getElementById('year').textContent=new Date().getFullYear();
-try{render()}catch(e){console.error('Catalogue:',e);document.getElementById('productCount').textContent='(105 produits)'}
+
 </script>
 <script>
 let deferredInstallPrompt = null;
@@ -351,6 +351,6 @@ if(installBtn) installBtn.addEventListener('click', async()=>{
 window.addEventListener('appinstalled',()=>{ const bar=document.getElementById('installBar'); if(bar) bar.style.display='none'; });
 
 
-try{render();}catch(e){console.error("SAME-SHOP render error",e);}
+
 </script>
 </body></html>
