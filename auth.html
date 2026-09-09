@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SAME-SHOP — Connexion</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Arial;background:#fffaf4;color:#20170f}.wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}.card{width:min(430px,100%);background:#fff;padding:30px;border-radius:22px;box-shadow:0 15px 50px #20170f18;border:1px solid #eadfd3}.logo{width:100px;height:55px;object-fit:contain;display:block;margin:auto}h1{text-align:center;margin:15px 0 5px}.sub{text-align:center;color:#746b63;margin-bottom:25px}input{width:100%;padding:13px;margin:6px 0;border:1px solid #eadfd3;border-radius:11px;outline:none}button{width:100%;padding:13px;border:0;border-radius:11px;background:#20170f;color:#fff;font-weight:800;margin-top:10px;cursor:pointer}.alt{background:#9a5a16}.msg{margin-top:15px;text-align:center;font-size:14px}a{color:#9a5a16;font-weight:700}.hidden{display:none}
+</style>
+</head><body><div class="wrap"><div class="card"><img src="logo.jpg" class="logo" alt="SAME-SHOP"><h1 id="title">Créer mon compte</h1><p class="sub">Bienvenue chez SAME-SHOP 🛍️</p><form id="form"><div id="signupFields"><input id="name" placeholder="Nom complet" autocomplete="name"><input id="phone" placeholder="Téléphone" autocomplete="tel"></div><input id="email" type="email" placeholder="Adresse e-mail" required autocomplete="email"><input id="password" type="password" placeholder="Mot de passe" required autocomplete="new-password"><button type="submit" id="submit">Créer mon compte</button></form><button class="alt" id="switch" type="button">J'ai déjà un compte</button><div class="msg" id="message"></div><p style="text-align:center;margin-top:20px"><a href="index.html">← Retour à la boutique</a></p></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script src="auth.js"></script></body></html>
