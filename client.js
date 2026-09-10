@@ -1,4 +1,4 @@
 async function getCurrentUser(){const{data,error}=await sameShopSupabase.auth.getUser();if(error||!data.user){location.href='auth.html';return null}return data.user}
-async function loadProfile(){const user=await getCurrentUser();if(!user)return;const m=user.user_metadata||{};document.getElementById('email').textContent=user.email||'—';document.getElementById('name').textContent=m.full_name||'—';document.getElementById('phone').textContent=m.phone||'—'}
+async function loadProfile(){const user=await getCurrentUser();if(!user)return;const{data:profile}=await sameShopSupabase.from('profiles').select('full_name,phone,address,city').eq('id',user.id).maybeSingle();const m=user.user_metadata||{};document.getElementById('email').textContent=user.email||'—';document.getElementById('name').textContent=profile?.full_name||m.full_name||'—';document.getElementById('phone').textContent=profile?.phone||m.phone||'—'}
 async function logout(){await sameShopSupabase.auth.signOut();location.href='index.html'}
 loadProfile();
